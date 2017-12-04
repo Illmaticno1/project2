@@ -1,0 +1,23 @@
+body{
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+  }
+
+  header{
+    border-bottom: 1px solid grey;
+    /* background-color: white; */
+    box-sizing: border-box;
+    height: 100px;
+    color: white;
+  }
+
+  h1{
+    color: green;
+    float: left;
+    margin-left: 3%;
+  }
+
+  form{
+    margin-top: 3%;
+    margin-right: 3%;
+  }
