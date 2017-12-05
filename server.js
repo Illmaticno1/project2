@@ -34,8 +34,11 @@ app.use(session({
 // controllers
 const theUController = require('./controllers/theU.js');
 const postController = require('./controllers/post.js');
+const userController = require('./controllers/users.js');
 app.use('/theU', theUController);
 app.use('/post', postController);
+app.use('/user', userController);
+
 // root
 app.get('/', (req, res) => {
   res.redirect('/theU');
