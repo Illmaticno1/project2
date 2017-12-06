@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <main>
+      <h1>show page</h1><br/>
+      <div class="container"
+      <div class="card">
+      <h2> <%= post.topic %></h2>
+      <img src="<%= post.img %>" class="jumbo-img"/>
+      <p><%= post.body %></p>
+      <small><p><%= post.created_at %></small><br/>
+
+      <a href="/post/<%= post.id %>/edit"><button type="button" name="button" class="edit-button">Edit</button></a>
+
+      <form action="/post/<%= post.id %>?_method=DELETE" method="POST">
+        <button class="delete-button" name="delete" value="delete">delete</button>
+      </form>
+
+    </div>
+  </div>
+    </main>
+
+  </body>
+</html>

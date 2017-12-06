@@ -2,6 +2,9 @@ body{
     background-color: rgba(0, 0, 0, 1);
     color: white;
   }
+.container{
+  width: 80%;
+}
 
   header{
     border-bottom: 1px solid grey;
@@ -18,6 +21,24 @@ body{
   }
 
   form{
-    margin-top: 3%;
+    margin-top: 10%;
     margin-right: 3%;
   }
+
+.card{
+  width: 80%;
+  background-color: rgba(160, 160, 160, .7);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 3% auto;
+  float: left;
+}
+
+.submit{
+  margin-top: 15px;
+  width: 100px;
+  background-color: orange;
+}
+input{
+  margin-top: 10px;
+}

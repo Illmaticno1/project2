@@ -2,12 +2,14 @@ const express = require('express');
 const router  = express.Router();
 const bcrypt  = require('bcrypt');
 const User    = require('../models/users.js');
-const post    = require('../models/post.js');
+const Post    = require('../models/post.js');
 // models
-
+console.log(Post);
 // index route
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  const allPosts = await Post.find();
   res.render('../views/index.ejs', {
+    post: allPosts,
     username: req.session.username
   })
   // res.send('works');

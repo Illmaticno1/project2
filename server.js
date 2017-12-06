@@ -30,14 +30,15 @@ app.use(session({
   resave: false,
   saveUnitialized: false
 }));
+app.use(methodOverride('_method')); // allow POST, PUT and DELETE FROM A FORM
 
 // controllers
 const theUController = require('./controllers/theU.js');
 const postController = require('./controllers/post.js');
-const userController = require('./controllers/users.js');
+// const userController = require('./controllers/users.js');
 app.use('/theU', theUController);
 app.use('/post', postController);
-app.use('/user', userController);
+// app.use('/user', userController);
 
 // root
 app.get('/', (req, res) => {

@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
 
-    <header class="text-center">
-      <h1>The U</h1>
-      <h1><% if (username){ %>
+  <header class="text-center">
+    <div class="container">
+    <a href="/theU"><h1>The U</h1></a>
+    <h1>
+      <% if (username){ %>
         Welcome, <%= username %>. <small><em><a href="/user/logout">Log out</a></em></small>
-      <% } %>
-    </h1>
+        <% } %>
+      </h1>
+    </div>
     </header>
 
     <main>
 
-      <div class="form container-fluid">
+      <h1>index page</h1><br/><br/>
+      <button><a href="/post/new">create</a></button>
+      <div class="container">
+        <% for (let i = 0; i < post.length; i++) { %>
 
-
+          <div class="card">
+          <a href="/post/<%= post[i].id %>">
+          <h2><%= post[i].topic %></h2></a>
+          <p><%= post[i].body %></p>
+          <img src="<%= post[i].img %>"/>
+          <small><p>Timestamp:<%= post[i].created_at %></p></small>
+          </div>
+          <% } %>
 
       </div>
 
-    </main>
 
-    <footer>
-      all rights reserveds    </footer>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </body>
-</html>
+        </main>
+
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      </body>
+      </html>
