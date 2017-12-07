@@ -7,33 +7,31 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
   <body>
+    <% include ./partials/header.ejs %>
 
-    <header class="text-center">
-      <h1>The U</h1>
-    </header>
 
     <main>
 
       <div class="form container-fluid">
 
-        <form action="/theU/login" method="post" class="form-inline">
-            <div class="form-group">
+        <form action="/theU/login" method="post" class="center_div1 form-inline">
+
               <label for="exampleInputName2">Username</label>
-              <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-            </div>
-            <div class="form-group">
+              <input type="text" class=" button form-control" id="exampleInputName2" placeholder="Jane Doe"><br/>
+
+
               <label for="exampleInputEmail2">Password</label>
-              <input type="password" class="form-control" id="exampleInputEmail2" placeholder="password">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+              <input type="password" class="button form-control" id="exampleInputEmail2" placeholder="password"><br/>
+
+            <button type="submit" class="submit1">Submit</button>
           </form>
 
       </div>
 
     </main>
 
-    <footer>
-      all rights reserveds    </footer>
+
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
+  <% include ./partials/footer.ejs %>
 </html>

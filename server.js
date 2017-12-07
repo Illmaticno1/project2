@@ -10,9 +10,10 @@ const app             = express();
 const PORT            = 3000;
 
 // CONNECT TO DATABASE
+mongoose.Promise = global.Promise;
 const mongoURI = 'mongodb://localhost:27017/theU';
 mongoose.connect(mongoURI, { useMongoClient: true});
-mongoose.Promise = global.Promise;
+
 
 // test connection
 const db = mongoose.connection;
@@ -28,7 +29,7 @@ app.use(morgan('dev'));
 app.use(session({
   secret: 'l;akjdfjlnfsoaijdsl;',
   resave: false,
-  saveUnitialized: false
+  saveUninitialized: false
 }));
 app.use(methodOverride('_method')); // allow POST, PUT and DELETE FROM A FORM
 

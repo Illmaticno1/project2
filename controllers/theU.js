@@ -4,7 +4,7 @@ const bcrypt  = require('bcrypt');
 const User    = require('../models/users.js');
 const Post    = require('../models/post.js');
 // models
-console.log(Post);
+// console.log(Post);
 // index route
 router.get('/', async (req, res) => {
   const allPosts = await Post.find();

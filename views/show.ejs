@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-  </head>
-  <body>
-    <main>
-      <h1>show page</h1><br/>
-      <div class="container"
-      <div class="card">
-      <h2> <%= post.topic %></h2>
-      <img src="<%= post.img %>" class="jumbo-img"/>
-      <p><%= post.body %></p>
-      <small><p><%= post.created_at %></small><br/>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <% include ./partials/header.ejs %>
+  <main>
+    <div class="container">
+      <div class="card example z-depth-5">
 
-      <a href="/post/<%= post.id %>/edit"><button type="button" name="button" class="edit-button">Edit</button></a>
 
-      <form action="/post/<%= post.id %>?_method=DELETE" method="POST">
-        <button class="delete-button" name="delete" value="delete">delete</button>
-      </form>
+        <img src="<%= post.img %>" class="jumbo-img"/>
+        <div class="white">
 
-    </div>
-  </div>
+
+
+          <div class="h2">
+        <h2> <%= post.topic %></h2>
+      </div>
+        <p><%= post.body %></p>
+        <small><p><%= post.created_at %></small></br>
+          <div class="btnDiv">
+          <a href="/post/<%= post.id %>/edit"><button type="button" name="button" class="btn"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button></a>
+          <form action="/post/<%= post.id %>?_method=DELETE" method="POST">
+            <button class="btn" name="delete"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+          </div>
+          </form>
+          <button class="btn"><a href="/post/new" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></button>
+        <div class="fb-comments" data-width: 100% data-moble="true"></div>
+      </div>
+
+        </div>
+      </div>
+      <% include ./partials/footer.ejs %>
     </main>
-
   </body>
-</html>
+  </html>
