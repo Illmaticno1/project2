@@ -22,7 +22,8 @@
         <img src="<%= post.img %>" class="jumbo-img"/>
         <div class="white">
           <div class="h2">
-            <h2> <%= post.topic %></h2>
+            <h2> <%= post.topic %> <div class="fb-like" data-href="http://localhost:3000/theU" data-width="40px" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div></h2>
+
           </div>
           <p><%= post.body %></p>
           <small><p><%= post.created_at %></small></br>
