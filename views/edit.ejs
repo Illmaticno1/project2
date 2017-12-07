@@ -9,22 +9,27 @@
   <body>
     <% include ./partials/header.ejs %>
     <main>
-      <div class="card z-depth-5">
-            <h2> <%= posts.topic %></h2>
+      <div class="card z-depth-5 editp">
+        <div class="white">
             <img src="<%= posts.img %>" class=""/>
           <div class="h2">
-            <h4>Edit your post</h4>
-            <p> <%= posts.body %></p>
+            <h2> <%= posts.topic
+            %></h2>
           </div>
-      <form class="edit form-inline" action="/post/<%= posts.id%>?_method=PUT" method="POST">
-        <label for="topic">Topic: </label>
-        <input class="form-control button" type='text' name="topic" value="<%= posts.topic %>">
-        <label for="body">body: </label>
-        <input class="form-control button" type='text' name="body" value="<%= posts.body %>">
-        <label for="body">img: </label>
-        <input class="form-control button" type='text' name="img" value="<%= posts.img %>">
-        <input class="submit form-control" type="submit" name="submit" value="submit">
-      </form>
+            <p> <%= posts.body %></p><br/>
+          <div class="h2">
+            <h4>Edit your post</h4>
+          </div>
+          <form class="form-inline" action="/post/<%= posts.id%>?_method=PUT" method="POST">
+            <label for="topic">Topic: </label>
+            <input class="form-control button" type='text' name="topic" value="<%= posts.topic %>"><br/>
+            <label for="body">body: </label>
+            <input class="form-control button" type='text' name="body" value="<%= posts.body %>"><br/>
+            <label for="body">img: </label>
+            <input class="form-control button" type='text' name="img" value="<%= posts.img %>"><br/>
+            <input class="submit form-control" type="submit" name="submit" value="submit">
+          </form>
+        </div>
       </div>
     </main>
     <% include ./partials/footer.ejs %>
