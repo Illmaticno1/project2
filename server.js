@@ -12,7 +12,6 @@ const PORT            = process.env.PORT || 3000;
 
 // CONNECT TO DATABASE
 mongoose.Promise = global.Promise;
-const mongoURI = 'mongodb://localhost:27017/theU';
 mongoose.connect(mongoURI, { useMongoClient: true});
 
 
