@@ -7,7 +7,8 @@ const bodyParser      = require ( 'body-parser' );
 const methodOverride  = require ( 'method-override' );
 const pretty          = require('pretty-error');
 const app             = express();
-const PORT            = 3000;
+const mongoURI        = process.env.MONGODB_URI || 'mongodb://localhost:27017/theU';
+const PORT            = process.env.PORT || 3000;
 
 // CONNECT TO DATABASE
 mongoose.Promise = global.Promise;
@@ -50,5 +51,7 @@ app.get('/', (req, res) => {
 
 
 app.listen(PORT, () => {
-  console.log('connected to port: ' + PORT);
+  console.log('----------------------------');
+  console.log('SERVER RUNNING ON PORT: ' + PORT);
+    console.log('----------------------------');
 });
