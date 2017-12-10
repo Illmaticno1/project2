@@ -27,6 +27,7 @@
 }
 body
 {
+  font-family: 'Roboto Slab', serif;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b5bdc8+0,828c95+36,28343b+100;Grey+Black+3D */
   background: #b5bdc8; /* Old browsers */
   background: -moz-linear-gradient(top, hsla(215,15%,75%,1) 0%, hsla(208,8%,55%,1) 36%, hsla(202,19%,20%,1) 100%); /* FF3.6-15 */
