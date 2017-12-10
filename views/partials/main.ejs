@@ -1,0 +1,17 @@
+<main class="text-left">
+  <div class="container box effect2">
+    <% for (let i = 0; i < post.length; i++) { %>
+      <div class="card example z-depth-5">
+      <div class="white">
+      <a href="/post/<%= post[i].id %>"><img src="<%= post[i].img %>"/></a>
+      <div class="h2">
+      <a href="/post/<%= post[i].id %>">
+      <h2><%= post[i].topic %></h2></a>
+      </div>
+      <p><%= post[i].body %></p>
+      <small><p><%= post[i].created_at %></p></small>
+      </div>
+      </div>
+      <% } %>
+  </div>
+    </main>
